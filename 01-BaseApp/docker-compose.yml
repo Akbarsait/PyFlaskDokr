@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  website:
+    build: .
+    command: 
+      gunicorn -b 0.0.0.0:8000
+        --reload
+        "baseapp.app:create_app()"
+    environment:
+      PYTHONUNBUFFERED: 'true'
+    volumes:
+      - '.:/baseapp'
+    ports:
+      - 8000:8000
