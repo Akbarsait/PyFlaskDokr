@@ -4,7 +4,7 @@ services:
   website:
     build: .
     command: 
-      gunicorn -b 0.0.0.0:8000
+      gunicorn -b 0.0.0.0:5000
         --reload
         "baseapp.app:create_app()"
     environment:
@@ -12,4 +12,4 @@ services:
     volumes:
       - '.:/baseapp'
     ports:
-      - 8000:8000
+      - 5000:5000

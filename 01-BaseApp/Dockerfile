@@ -23,4 +23,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 #used to set a command to be executed when running a container. There must be only one CMD in a dockerfile. Last CMD will takes effect if more exists. 
-CMD gunicorn -b 0.0.0.0:8000  "baseapp.app:create_app()"
+CMD gunicorn -b 0.0.0.0:5000  "baseapp.app:create_app()"
