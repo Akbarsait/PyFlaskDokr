@@ -6,13 +6,13 @@ Refer build and Run section of [Base App](https://github.com/Akbarsait/PyFlaskDo
 
 1. Changes to **app.py**:  We started using *render_template* to load html template files. Flask looks for templates in a templates subdirectory located inside the main application directory. In our case, we have *baseapp/templates* folder to store our html templates. *render_template* function takes the filename of the template as its first argument followed by key-value pairs that represent actual values for variables referenced in the template.
 
-```
+```python
 return render_template('home.html', vbookmarks=bookmarks)
 ```
 
 We added a list of dictionaries in python to load some dummy data that can be shared through a key/value pair argument in *render_template. 
 
-```
+```python
  bookmarks = [
         {'id': 1, 'name': 'Job Board', 'addinfo': 'GetCFMLJobs Board Admin', 'link': 'getcfmljobs.com'},
         {'id': 2, 'name': 'Github Dash', 'addinfo': 'My Projects', 'link': 'github.com/Akbarsait'},
@@ -24,7 +24,7 @@ We added a list of dictionaries in python to load some dummy data that can be sh
 
 2. **Adding Templates**: We added two template files with the base bootstrap structure to it called *home.html* and *about.html* in the *baseapp/templates* folder. We used control statements inside the *home.html* template to display the values of the list defined in the *app.py* 
 
-```
+```html
 {% for bookmark in vbookmarks %}
       <div class="col-sm-2"><br/>
           <div class="card mb-4">
