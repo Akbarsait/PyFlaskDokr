@@ -10,3 +10,22 @@ A Simple learning series of Python, Flask, and Docker. This is a document for my
 7. User Authentication
 8. Error Managements
 9. Deployments.
+
+## How to run the application.
+
+1. Build and start with Docker Compose
+```docker
+docker-compose up --build
+```
+2. Visit the site in browser. Use the correct port as mentioned in the *docker-compose.yml*
+```html
+http://localhost:8080/
+```
+3. To Stop the docker
+```docker
+docker-compose stop
+```
+4. Once the images are done building, we can use the following command to bring the site up. 
+```docker
+docker-compose up
+```
