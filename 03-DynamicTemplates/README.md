@@ -52,4 +52,4 @@ def about():
 
 We are now completed building our third app with dynamic templates. Over here is the output of running the templates app. 
 
-![image](https://github.com/Akbarsait/PyFlaskDokr/tree/main/03-DynamicTemplates/baseapp/static/output.png)
+![image](baseapp/static/output.png)
