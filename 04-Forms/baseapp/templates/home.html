@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% set active_page = "home" %}<!-- setting the active flag -->
+{% block content %}
+<div class="row">  
+    {% for bookmark in vbookmarks %}
+      <div class="col-md-3">
+          <div class="card mb-4">
+              <div class="card-body">
+                  <h5 class="card-title"><a href="http:\\{{ bookmark.link }}">{{ bookmark.name }}</a></h5>
+                  <p class="card-text">{{ bookmark.addinfo }}</p>
+                  <a href="http:\\{{ bookmark.link }}" class="btn btn-primary btn-sm" target="_blank">&rarr;</a>
+              </div>
+              <div class="card-footer text-muted">January 1, 2020</div>
+          </div>
+      </div>  
+  {% endfor %} 
+</div>
+{% endblock content %} <!-- /end of block-->
