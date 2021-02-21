@@ -37,6 +37,11 @@ class BookmarkForm(FlaskForm):
 ```
 
 4. Create a new Form template. The fields defined in the *BookmarkForm* class renders the fields as HTML in *addbookmark.html* as follows. 
+
+    1. We are using the *form.hidden_tag()* argument that generates a hidden field that includes a token to protect the form against CSRF attacks. To get the form protected, we require to include this hidden field and SECRET_KEY variable defined in the Flask configuration. 
+    
+    2. We are using the form.errors to loop through the error in form submission and customizing it with bootstrap to provide a clear view of the user errors. 
+
 ```html
 <form method="POST" action="" novalidate>
     {{ form.hidden_tag() }}
@@ -73,11 +78,6 @@ class BookmarkForm(FlaskForm):
     <div class="form-group">{{ form.create(class="btn btn-primary btn-sm") }}</div>
 </form>
 ```
-
-    1. We are using the *form.hidden_tag()* argument that generates a hidden field that includes a token to protect the form against CSRF attacks. To get the form protected, we require to include this hidden field and SECRET_KEY variable defined in the Flask configuration. 
-    
-    2. We are using the form.errors to loop through the error in form submission and customizing it with bootstrap to provide a clear view of the user errors. 
-
 
 5. Let's do the final handling at the *app.py* to define the route with HTTP methods to handle the form submission. The *form.validate_on_submit()* helps in all the form processing work. We are using the *flash()* to show the success message to the user when the form processing goes well without errors. The *redirect()* function helps to navigate to a different page.  
 
